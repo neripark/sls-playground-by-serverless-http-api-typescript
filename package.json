@@ -2,6 +2,10 @@
   "name": "serverless-http-api-typescript",
   "description": "",
   "version": "0.1.0",
+  "scripts": {
+    "start": "sls offline start",
+    "deploy": "sls deploy"
+  },
   "dependencies": {},
   "devDependencies": {
     "@types/aws-lambda": "^8.10.61",

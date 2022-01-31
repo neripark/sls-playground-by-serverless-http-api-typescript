@@ -1,5 +1,8 @@
 service: serverless-http-api-typescript
-frameworkVersion: '2'
+
+# todo: 2のままで動かす方法を調べる
+# frameworkVersion: '2'
+frameworkVersion: '1'
 
 provider:
   name: aws
@@ -16,3 +19,5 @@ functions:
 
 plugins:
   - serverless-plugin-typescript
+  # なかったので追記。AWS上で影響がないことは確認したほうがいいかも
+  - serverless-offline
