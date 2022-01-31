@@ -10,12 +10,18 @@ provider:
   lambdaHashingVersion: '20201221'
 
 functions:
-  hello:
-    handler: handler.hello
+  getHello:
+    handler: handler.getHello
     events:
       - httpApi:
-          path: /
+          path: /hello
           method: get
+  postHello:
+    handler: handler.postHello
+    events:
+      - httpApi:
+          path: /hello
+          method: post
   lighthouse:
     handler: handler.lighthouse
     events:
