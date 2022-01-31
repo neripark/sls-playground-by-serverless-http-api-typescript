@@ -16,6 +16,12 @@ functions:
       - httpApi:
           path: /
           method: get
+  lighthouse:
+    handler: handler.lighthouse
+    events:
+      - httpApi:
+          path: /lighthouse
+          method: get
 
 plugins:
   - serverless-plugin-typescript
