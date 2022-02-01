@@ -50,11 +50,17 @@ const execLighthouse = async () => {
 
 // _________________________________________________
 //
-export const hello: Handler = async (event: any) => {
+export const hello: Handler = (event: any) => {
   console.log("LOGGER:: hello kicked.");
 
-  const result = await execLighthouse();
-  console.log(`LOGGER::result:: ${JSON.stringify(result)}`);
+  // いったん非同期処理を待たずにレスポンスさせる
+  execLighthouse()
+    .then((value) => {
+      console.log(`LOGGER::result:: ${JSON.stringify(value)}`);
+    })
+    .catch(e => {
+      console.error(e)
+    });
 
   const response = {
     statusCode: 200,
@@ -62,13 +68,12 @@ export const hello: Handler = async (event: any) => {
       {
         message: 'Go Serverless v1.0! Your function executed successfully!',
         input: event,
-        result 
       },
       null,
       2
     ),
   };
-  console.log(`LOGGER::response:: ${JSON.stringify(response)}`);
+  // console.log(`LOGGER::response:: ${JSON.stringify(response)}`);
 
   return new Promise((resolve) => {
     resolve(response)
