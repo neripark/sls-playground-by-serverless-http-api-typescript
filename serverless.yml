@@ -9,24 +9,32 @@ provider:
   runtime: nodejs12.x
   lambdaHashingVersion: '20201221'
 
+# functions:
+#   getHello:
+#     handler: handler.getHello
+#     events:
+#       - httpApi:
+#           path: /hello
+#           method: get
+#   postHello:
+#     handler: handler.postHello
+#     events:
+#       - httpApi:
+#           path: /hello
+#           method: post
+#   lighthouse:
+#     handler: handler.lighthouse
+#     events:
+#       - httpApi:
+#           path: /lighthouse
+#           method: get
+
 functions:
-  getHello:
-    handler: handler.getHello
+  hello:
+    handler: handler.hello
     events:
       - httpApi:
-          path: /hello
-          method: get
-  postHello:
-    handler: handler.postHello
-    events:
-      - httpApi:
-          path: /hello
-          method: post
-  lighthouse:
-    handler: handler.lighthouse
-    events:
-      - httpApi:
-          path: /lighthouse
+          path: /
           method: get
 
 plugins:

@@ -6,7 +6,11 @@
     "start": "sls offline start",
     "deploy": "sls deploy"
   },
-  "dependencies": {},
+  "dependencies": {
+    "chrome-launcher": "^0.15.0",
+    "lighthouse": "^9.2.0",
+    "lighthouse-logger": "^1.3.0"
+  },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.61",
     "serverless": "^1.78.1",
