@@ -10,6 +10,8 @@ provider:
   # runtime: nodejs12.x
   runtime: nodejs14.x
   lambdaHashingVersion: '20201221'
+  # S3のregionと一致させた
+  region: ap-northeast-1
 
 functions:
   hello:
