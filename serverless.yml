@@ -23,3 +23,4 @@ plugins:
   - serverless-plugin-typescript
   # なかったので追記。AWS上で影響がないことは確認したほうがいいかも
   - serverless-offline
+  - serverless-layers
